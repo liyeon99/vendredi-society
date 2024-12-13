@@ -1,0 +1,119 @@
+//footer
+.footer{
+  min-height: 100vh;
+  padding: 130px 0 0 0;
+  color: $color-black;
+  overflow: hidden;
+  @include res{
+    padding: 20vw 0 0 0;
+    overflow:visible;
+    height: auto;
+  }
+  h2{
+    font-size: clamp(32px, 4.16vw, 80px);
+    line-height: 1;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .group-icon{
+    position: relative;
+    .arrow{
+      margin: 66px auto 18px;
+      z-index: 2;
+      pointer-events: none;
+      position: relative;
+    }
+    .circle{
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+    }
+  }
+  h3{
+    font-family: "Orbikular", serif;
+    font-weight: 200;
+    font-size: 18.46vw;
+    text-align: center;
+    @include res{
+      font-size: 16.5vw;
+      padding: 20vw 0 0;
+    }
+    display: flex;
+    justify-content: center;align-items: center;
+    span{
+      --y:0;
+      transform: translateY(var(--y));
+      transition: transform 3s;
+      &.letter1{
+        --y:-40%;
+      }
+      &.letter2{
+        --y:-35%;
+      }
+      &.letter3{
+        --y:-30%;
+      }
+    }
+  }
+  .group-info{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2vw 44px;
+    margin: -2vw 0 0;
+    @include res{
+    margin: 16vw 0 0;
+    padding:0;
+    flex-direction: column;
+    }
+    .btn-top{
+      z-index: 2;
+    }
+    .link-mail,.link-tel,.btn-top{
+      font-size: clamp(10px, 1.25vw, 24px);
+      font-weight: 400;
+      @include res{
+        font-size: 22px;
+        line-height: 96px;
+        border-top: 1px solid rgba(0, 61, 49, .3);
+        width: 100%;
+        text-align: center;
+      }
+    }
+    .info-wrap{
+        display: flex;
+        align-items: center;
+        gap: 64px;
+        @include res{
+          font-size: 22px;
+          border-top: 1px solid rgba(0, 61, 49, .3);
+          line-height: 94px;
+          flex-direction: column;
+          gap: 0;
+        }
+      .social-box{
+        display: flex;
+        gap: 25px;
+        filter: grayscale(1) contrast(200%);
+        @include res{
+            height: 96px;
+            align-items: center;
+        }
+        img{
+          width: 13px;
+          height: auto;
+          @include res{
+            width: 20px;
+          }
+          &[alt="facebook"] {
+            width: 7px;
+            @include res{
+              width: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

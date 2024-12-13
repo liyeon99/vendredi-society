@@ -1,0 +1,12 @@
+//button
+.btn-play{
+  width: 63px;
+  aspect-ratio: 1/1;
+  background-image: url(../images/icons/play.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: scale .3s;
+  &:hover{
+    scale: 1.1;
+  }
+}

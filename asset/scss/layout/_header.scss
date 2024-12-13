@@ -1,0 +1,327 @@
+// header
+.header {
+  width: 100%;
+
+  &.active {
+    .nav {
+      &.convert {
+        .logo .mini {
+          filter: none;
+        }
+      }
+
+      &.active {
+        .logo {
+          .original {
+            transform: translateY(-300%);
+          }
+
+          .mini {
+            opacity: 1;
+            visibility: visible;
+            filter: none;
+          }
+        }
+
+      }
+
+      .btn-menu {
+        .open {
+          opacity: 0;
+          visibility: hidden;
+        }
+
+        .close {
+          opacity: 1;
+          visibility: visible;
+          color: $color-white;
+        }
+      }
+    }
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: fixed;
+    width: 100%;
+    padding-top: clamp(20px, 1.4vw, 50px);
+    // left,right 동시에 
+    padding-inline: clamp(20px, 2vw, 50px);
+    z-index: 15;
+
+    &.active {
+      .logo {
+        .original {
+          transform: translateY(0);
+        }
+
+        .mini {
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+
+    }
+
+    &.convert {
+      .logo {
+        .mini {
+          filter: brightness(0) saturate(100%) invert(12%) sepia(11%) saturate(3865%) hue-rotate(122deg) brightness(98%) contrast(100%);
+        }
+      }
+
+      .btn-menu {
+        color: $color-primary;
+      }
+    }
+
+    .logo {
+      a {
+        display: block;
+        position: relative;
+      }
+
+      .original {
+        min-width: 140px;
+        width: 15vw;
+        transform: translateY(-300%);
+        transition: transform .5s ease;
+      }
+
+      .mini {
+        width: 60px;
+        height: 35px;
+        transition: filter .5s;
+        opacity: 1;
+        visibility: visible;
+        position: absolute;
+        top: 0;
+        transition: opacity .5s, visibility .5s;
+      }
+    }
+
+    .btn-menu {
+      transition: color .5s;
+      // 최소 14, 최대 24
+      font-size: clamp(14px, 1.25vw, 24px);
+      text-transform: uppercase;
+      color: $color-white;
+      position: relative;
+
+      .close,
+      .open {
+        position: absolute;
+        top: 0;
+        right: 0;
+        transition: opacity .5s, visibility .5s;
+      }
+
+      .close {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      &:hover {
+        .close {
+          color: $color-bright;
+        }
+      }
+    }
+  }
+
+  .group-sub {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    --height: 0;
+    height: var(--height);
+    z-index: 14;
+    transition: height 1s ease;
+    overflow: hidden;
+    will-change: transform;
+    &.active {
+      --height: 100vh;
+
+      .sub-list {
+        .sub-item {
+          transform: translateY(0);
+
+          @for $i from 1 through 6 {
+            &:nth-child(#{$i}) {
+              transition-delay: 0.2s * $i;
+            }
+          }
+        }
+      }
+    }
+
+    .inner {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: $color-dark;
+      color: $color-white;
+      padding: 0 230px 0 148px;
+
+      @include resT {
+        padding: 40px;
+      }
+
+      @include res {
+        overflow-y: auto;
+        padding: 161px 0 0;
+      }
+    }
+
+    .sub-area {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+
+      @include res {
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+
+        .sub-list {
+          padding-left: 20px;
+          order: 1;
+        }
+      }
+    }
+
+    .info-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      font-size: 13px;
+
+      @include res {
+        order: 2;
+        margin-top: 50px;
+        text-align: center;
+        font-size: 22px;
+        align-items: center;
+        line-height: 98px;
+        width: 100%;
+        gap: 0;
+
+        >* {
+          position: relative;
+          width: 100%;
+
+          &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: $color-white;
+          }
+        }
+      }
+
+      .social-box {
+        display: flex;
+        gap: 25px;
+        margin-top: 40px;
+
+        @include res {
+          margin-top: 0;
+        }
+
+        img {
+          width: 13px;
+          filter: grayscale(1) contrast(200%) invert(1);
+
+          &[alt="facebook"] {
+            width: 7px;
+          }
+
+          @include res {
+            width: 20px;
+
+            &[alt="facebook"] {
+              width: 10px;
+            }
+          }
+        }
+
+        @include res {
+          width: 100%;
+          height: 98px;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+
+    .sub-list {
+      .sub-item {
+        transition: transform 1s ease;
+        transform: translateY(30px);
+        height: clamp(75px, 6.9444444444vw, 133.3333333333px);
+        overflow: hidden;
+        @include res {
+          height: 58px;
+        }
+
+        a {
+          font-size: clamp(80px, 6.9444444444vw, 133.3333333333px);
+          transition: .3s;
+          display: flex;
+          flex-direction: column;
+          transform: translateY(-23.8px);
+
+          @include resT {
+            transform: translateY(-13px);
+          }
+
+          @include res {
+            transform: translateY(-4px);
+          }
+
+          &:hover {
+            .char {
+              animation: move .3s ease forwards;
+              @for $i from 7 through 1 {
+                &:nth-of-type(#{$i}) {
+                  animation-delay: 0.05s * (8 - $i);
+                }
+              }
+            }
+            .dummy .char{
+              opacity: 1;
+              visibility: visible;
+            }
+          }
+
+          @include res {
+            font-size: 50px;
+          }
+
+          .original {
+            font-weight: 400;
+          }
+
+          .dummy {
+            color: $color-bright;
+            font-family: 'Orbikular', serif;
+            font-style: italic;
+            .char{
+              opacity: 0;
+              visibility: hidden;
+            }
+          }
+        }
+      }
+    }
+  }
+}

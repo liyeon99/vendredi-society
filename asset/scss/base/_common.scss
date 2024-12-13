@@ -1,0 +1,68 @@
+// common의 용도
+.blind {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+}
+
+body {
+  transition: opacity .6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  overflow-x: hidden;
+  
+}
+
+body.hidden {
+  overflow: hidden;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+// 커서
+.cursor {
+  width: 20px;
+  height: 20px;
+  z-index: 999;
+  pointer-events: none;
+  border-radius: 100%;
+  border: 10px solid $color-bright;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  transition:
+    scale .4s cubic-bezier(0.5, 0, 0, 1),
+    transform .4s cubic-bezier(0.5, 0, 0, 1),
+    border .4s cubic-bezier(0.5, 0, 0, 1);
+
+  @include res {
+    display: none;
+  }
+
+  &-hover {
+    scale: 1.5;
+    border-width: 1px;
+  }
+}
+
+.bright {
+  background: $color-bright;
+  color: $color-primary;
+}
+.white {
+  background: $color-white;
+  color: $color-dark;
+}
+
+.ok {
+  font-weight: 200;
+  font-size: clamp(59rem, 7.6vw, 146rem);
+  line-height: 1.14;
+  font-family: 'Orbikular', serif;
+  color: $color-dark;
+}

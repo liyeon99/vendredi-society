@@ -1,0 +1,1147 @@
+//main
+.sc-intro {
+  width: 100%;
+  position: relative;
+  .headline {
+    font-size: clamp(81px, 10.5vw, 201px);
+    line-height: 1.1;
+    letter-spacing: -0.008em;
+    text-align: center;
+    transition: .3s;
+    margin: 0 auto;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(8px, 1vw, 10px);
+    @include res {
+      font-size: clamp(30px, 10.5vw, 40px);
+      gap: clamp(5px, 1vw, 10px);
+    }
+  }
+
+  .group-intro {
+    position: relative;
+		height: 500vh;
+		// border: 5px solid #f00;
+    @include res{
+      height: auto;
+    }
+    .sticky-container {
+      height: 700vh;
+      @include res{
+        height: 300vh;
+        .sticky{
+          height: auto;
+        }
+      }
+      
+    }
+    .top-wrap,
+    .bottom-area {
+      @include flexbox;
+      width: 100%;
+      height: 100vh;
+      .headline {
+        strong {
+          display: block;
+          overflow: hidden;
+          padding: .2em 0;
+          .box {
+            display: block;
+          }
+        }
+        strong+strong {
+          margin-top: -5vw;
+        }
+      }
+
+      .space {
+        position: relative;
+        margin: 0 2vw;
+        width: 14vw;
+        max-width: 270px;
+        border-radius: .35em;
+        height: 7vw;
+        max-height: 135px;
+        background: $color-bright;
+        overflow: hidden;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        top: -1vw;
+
+        @include res {
+          width: 55px;
+          height: 29px;
+        }
+
+        img {
+          width: 30%;
+        }
+      }
+    }
+
+    .top-area {
+      overflow: hidden;
+      color: $color-white;
+      --height: 100vh;
+      height: var(--height);
+      background: $color-dark;
+    }
+
+    .bottom-area {
+      position: absolute;
+      top: 0;
+      z-index: -1;
+      --width: 14vw;
+      height: 100vh;
+      @include res{
+        height: auto;
+        position: relative;
+        .headline{
+          display: none;
+        }
+      }
+
+      .space {
+        width: var(--width);
+      }
+
+      .headline {
+        .text {
+          position: relative;
+
+          &1 {
+            z-index: 3;
+          }
+
+          &2 {
+            z-index: 1;
+          }
+
+          &3 {
+            z-index: 3;
+          }
+        }
+      }
+
+      .media-wrap {
+        position: absolute;
+        top: 20px;
+        @include res{
+          display: flex;
+          flex-direction: column;
+          position: relative;
+          padding: 20vw 0;
+          width: 100%;
+          height: auto;
+        }
+        .box {
+          position: absolute;
+          border-radius: 20px;
+          overflow: hidden;
+          width: 25vw;
+          z-index: 2;
+          &1{
+            margin: 0 0 0 -10vw;
+          }
+          &2 {
+            aspect-ratio: 4/5;
+            margin:20vw 0 0 -30vw;
+          }
+
+          &3 {
+            aspect-ratio: 4.5/5;
+            margin: 40vw 0 0 10vw;
+          }
+
+          @include res {
+            position: static;
+            &1 {
+              width: 90vw;
+              aspect-ratio: 16/9;
+              margin: 0;
+              transform: translateX(-20%) rotate(12deg);
+            }
+
+            &2 {
+              width: 70vw;
+              aspect-ratio: 1/1;
+              margin: 0;
+              transform: translateX(30%) rotate(-10deg);
+            }
+
+            &3 {
+              width: 70vw;
+              aspect-ratio: 1/1;
+              margin:0;
+              transform: translateX(-10%) rotate(10deg);
+            }
+          }
+
+          img,
+          video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+
+  }
+  .group-right {
+		transform: translateX(300%);
+    width: 100%;
+    padding: 183.8px 0px 183.8px 35vw;
+    font-size: clamp(81px, 10.5vw, 201px);
+    line-height: 1;
+    color: $color-white;
+    background: $color-dark;
+		// border: 5px solid sandybrown;
+		position: relative;
+		z-index: 10;
+    p {
+      .char {
+        opacity: .1;
+        @include res{
+          opacity: 1;
+        }
+      }
+    }
+
+    @include res {
+      transform: translateX(0);
+      padding: 106px 20px;
+      font-size: 45px;
+    }
+  }
+
+  .group-garder {
+    width: 100%;
+    text-align: center;
+    color: #f0ff3d;
+    text-transform: uppercase;
+    font-size: clamp(37px, 4.9vw, 93px);
+    font-family: 'Orbikular', serif;
+    height:600vh;
+    margin-top: 100vh;
+    &.on{
+      h3{
+        color:$color-dark;
+      }
+      svg{
+        opacity:1;
+        path{
+          fill:$color-bright;
+        }
+      }
+      @include res{
+        h3{
+          color: $color-bright;
+        }
+        svg{
+          path{fill:none}
+        }
+      }
+    }
+    @include res {
+      font-size: 37px;
+      padding: 10vw 0 28vw;
+      overflow: hidden;
+      height:auto;
+      margin-top: 0;
+    }
+    .sticky-container {
+      height: 700vh;
+      @include res{
+        height:auto;
+      }
+      .sticky {
+        @include flexbox;
+        @include res{
+          height: auto;
+          background: #002921;
+          overflow:visible;
+        }
+      }
+    }
+
+    h3 {
+      font-weight: 300;
+      position: relative;
+      z-index: 2;
+      color: $color-bright;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      @include res{
+        padding: 28vw 0;
+        .char{
+          rotate: 0;
+        }
+      }
+    }
+    svg {
+      position: absolute;
+      width: 53vw;
+      height: auto;
+      transform: rotate(50deg);
+      z-index: 1;
+      opacity: 0.2;
+      
+      @include res{
+        width: 110vw;
+        transform: rotate(10deg);
+        max-width: max-content;
+        opacity:1;
+        fill: none;
+      }
+    }
+  }
+
+  .group-change {
+    position:relative;
+    padding: 14vw 0 16vw;
+    h2 {
+      margin: 0 auto;
+      width: 80vw;
+      @include res{
+        width: 90vw;
+        font-size: clamp(30px, 10.5vw, 40px);
+      }
+      .line{
+        clip-path: polygon(-8% 0, 110% 0, 110% 100%, -10% 100%);
+        --wordY:100%;
+        .word{
+          transform: translateY(var(--wordY));
+          @include res{
+            transform: translateY(0);
+          }
+        }
+      }
+    }
+
+    .showreel-area {
+      display: flex;
+      gap: 7vw;
+      width: 65vw;
+      margin: 180px auto 0;
+      justify-content: space-between;
+      align-items: center;
+      @include res{
+        flex-direction: column;
+        width: 90vw;
+        margin: 0 auto;
+      }
+      .desc {
+        width: 50%;
+        font-size: clamp(13px, 1.11vw, 21px);
+        text-indent: clamp(60px, 10vw, 105px);
+        line-height: 1.38;
+        text-transform: uppercase;
+        font-weight: 400;
+        @include res{
+          text-indent: 0;
+          font-size: 17px;
+          width: 100%;
+        }
+      }
+
+      .video-wrap {
+        width: clamp(255px, 50%, 440px);
+        @include column-flexbox;
+        position: relative;
+        overflow: hidden;
+        .btn-play{
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 2;
+          width: 100%;
+          height: 100%;
+          background-position: center 45%;
+          background-size: 63px 63px;
+          @include res{
+            background-position: center center;
+          }
+        }
+        @include res{
+          width: 100%;
+          margin: 15vw auto 10vw;
+        }
+        figcaption {
+          line-height: 1.38;
+          text-transform: uppercase;
+          font-weight: 400;
+          font-size: clamp(7px, .9vw, 16px);
+          padding-top: 15px;
+          @include res{
+            display: none;
+          }
+        }
+        .thumb {
+          width: 100%;
+          aspect-ratio: 16/10;
+          cursor: pointer;
+          position: relative;
+          border-radius: 20px;
+          overflow: hidden;
+          video{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+          &::before {
+            content: "";
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            position: absolute;
+            background: rgba(0, 0, 0, .2);
+            z-index: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+.sc-project{
+  position: relative;
+  color: $color-white;
+  padding: 14vw 0;
+  display: flex;
+  flex-direction: column;
+  background: $color-black;
+  @include res{
+    padding: 20vw 8vw 10vw;
+    background: $color-dark;
+  }
+  h2{
+    font-size: clamp(32px, 4.16vw, 80px);
+    line-height: 1;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: -.1;
+  }
+  .sub-title{
+    margin-top: 34px;
+    text-align: center;
+    font-weight: 200;
+    font-size: clamp(23px, 2vw, 40px);
+    font-family: 'Orbikular', serif;
+  }
+  button{
+    margin-top: 10vw;
+    position: relative;
+    &.btn-otio{
+      margin-top: 40vw;
+      margin-bottom: 20vw;
+      @include res{
+        margin-top: 10vw;
+        margin-bottom: 0;
+      }
+    }
+    video{
+      position: relative;
+      z-index: 2;
+      border-radius: 20px;
+      width: clamp(260px,50vw,650px);
+      margin: 0 auto;
+      @include res{
+        width: 100%;
+      }  
+    }
+    .txt-wrap{
+      position: absolute;
+      top: 25%;
+      white-space: nowrap;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      @include res{
+        top: auto;
+        bottom: 10vw;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 3;
+      }
+      span{
+        position: relative;
+        font-size: clamp(320px, 41vw, 800px);
+        font-family: "Orbikular", serif;
+        font-weight: 300;
+        z-index: 3;
+        @include res{
+          font-size: 18vw;
+        }
+        color: $color-bright;
+        &:nth-child(3),
+        &:nth-child(4){
+          z-index: 1;
+          @include res{
+            z-index: 3;
+          }
+        }
+      }
+    }
+  }
+  .hori-wrap{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    &.fixed{
+      position: fixed;
+      height: 1430px;
+      @include res{
+        position: static;
+        height: auto;
+      }
+    }
+    @include res{
+      position: static;
+      height: auto;
+    }
+  }
+  
+  .hori-box{
+    position: relative;
+    @include res{
+      position: static;
+    }
+  }
+  .hori{
+    pointer-events: none;
+    width: 34%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    opacity: .2;
+    &1{
+      left: 20px;
+    }
+    &2{
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+    &3{
+      right: 20px;
+    }
+  }
+}
+
+.sc-rule{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  @include res{
+    padding: 34vw 0;
+    height: auto;
+  }
+  h2{
+    width: 80%;
+    margin: 0 auto;
+    font-size: clamp(40px, 4.9vw, 93px);
+    line-height: 1.03;
+    @include res{
+      width: 90vw;
+    }
+  }
+}
+
+.sc-part{
+  .sticky-container{
+    height: 600vh;
+    @include res{
+      height: auto;
+    }
+  }
+  .sticky{
+    display: flex;
+    @include res{
+      height: auto;
+    }
+  }
+  .group-canvas,.group-right{
+    flex: 50%;
+  }
+  .group-canvas{
+    overflow: hidden;
+    @include res{
+      display: none;
+    }
+  }
+  .group-right{
+    background-color: $color-bright;
+    overflow: hidden;
+    position: relative;
+    .part-wrap{
+      
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: opacity .5s, visibility .5s;
+      opacity: 0;
+      visibility: hidden;
+      @include res{
+        opacity: 1;
+        visibility: visible;
+        position: static;
+      }
+      &.on{
+        opacity: 1;
+        visibility: visible;
+      }
+      .thumb{
+        display: none;
+        @include res{
+          display: block;
+          width: 100%;
+          aspect-ratio: 1/1;
+          img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+      .txt-box{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 80px;
+        padding: 0 2vw 0 7vw;
+        height: 100vh;
+        @include res{
+          height: auto;
+          gap: 16vw;
+          padding: 16vw 20px;
+        }
+        h3{
+          font-size: clamp(17px, 1.25vw, 24px);
+          line-height: 1.22;
+          font-weight: 400;
+          max-width: 310px;
+          text-transform: uppercase;
+        }
+        h2{
+          font-size: clamp(35px, 3.125vw, 60px);
+          line-height: 1.045;
+          font-weight: 300;
+          font-family: "Orbikular", serif;
+          text-transform: uppercase;
+        }
+        p{
+          font-size: clamp(18px,1.25vw,24px);
+          font-weight: 400;
+          padding: 0 6.77vw 0 10vw;
+          @include res{
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
+  canvas{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    scale: 1.1;
+  }
+}
+@keyframes rail {
+  0% {
+    transform: translateX(0)
+  }
+
+  100% {
+    transform: translateX(-50%)
+  }
+}
+.sc-vous{
+  .group-att{
+    height: 100vh;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    .txt-ani{
+      overflow: hidden;
+      width: 100%;
+      height: clamp(69px, 10vw, 180px);
+      font-size: clamp(69px, 9vw, 173px);
+      line-height: 1.2;
+      font-weight: 300;
+      color: $color-white;
+      white-space: nowrap;
+      @include res{
+        height: auto;
+        text-align: center;
+        text-transform:none;
+      }
+      .okk{
+        font-family: "Orbikular",serif;
+      }
+      .title{
+        display: none;
+        @include res{
+          display: block;
+        }
+      }
+      .trans1,.trans2{
+				width: max-content;
+        animation: rail 8s linear infinite;
+        position: relative;
+				display: flex;
+        @include res{
+          display: none;
+        }
+      }
+    }
+    .desc{
+      font-size: clamp(9px, 1.1vw, 21px);
+      color: $color-bright;
+      margin-top: 108px;
+      text-align: center;
+      display: block;
+      @include res{
+        font-size: 17px;
+        margin-top: 10vw;
+      }
+    }
+  }
+  .group-desole{
+    height: 100vh;
+    padding-left: 10vw;
+    display: flex;
+    align-items: start;
+    padding: 150px 10vw;
+    @include res{
+      padding: 20vw 20px;
+      height: auto;
+      flex-direction: column;
+      gap: 15vw;
+    }
+    h3{
+      font-size: clamp(40px, 4.9vw, 93px);
+      line-height: 1.03;
+      font-family: "Orbikular",serif;
+      font-weight: 200;
+      width: clamp(315px, 40vw, 752px);
+      @include res{
+        width: 100%;
+      }
+    }
+    .desc-wrap{
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: end;
+      padding-left: 10vw;
+      gap: 7vw;
+      width: clamp(190px, 50vw, 700px);
+      @include res{
+        width: 100%;
+        padding: 0;
+        gap: 10vw;
+      }
+      p{
+        text-transform: uppercase;
+        text-indent: 5vw;
+        font-weight: 400;
+        font-size: clamp(13px, 1.11vw, 21px);
+        line-height :1.38;
+        @include res{
+          font-size: 17px;
+          text-align: left;
+          text-indent: 0;
+        }
+      }
+    }
+  }
+}
+
+.sc-free{
+  background: $color-free;
+  padding: 150px 0 0;
+  text-align: center;
+  @include res{
+    background: $color-free-m;
+  }
+  h2{
+    font-size: clamp(32px, 4.16vw, 80px);
+    text-transform: uppercase;
+    letter-spacing: -1px;
+  }
+  .sub-title{
+    margin: 0 0 34px;
+    font-size: clamp(23px, 2vw, 40px);
+    font-family: "Orbikular",serif;
+    letter-spacing: -0.01em;
+    font-weight: 200;
+  }
+  .sticky-container{
+    height: 700vh;
+    @include res{
+      height: auto;
+    }
+  }
+
+  .clip-area{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    @include flexbox;
+    @include res{
+      margin: 0 auto;
+      width: 90%;
+      flex-direction: column;
+      gap: 80px;
+      padding: 80px 0;
+      align-items: start;
+    }
+    .up{
+      position: absolute;
+      color: $color-white;
+      text-indent: 6vw;
+      display: block;
+      font-size: clamp(11px, 1.46vw, 28px);
+      line-height: 1.38;
+      text-transform: uppercase;
+      text-align: left;
+      right: 17vw;
+      --y:100vh;
+      transform: translateY(var(--y));
+      @include res{
+        position: static;
+        font-size: 17px;
+        text-indent: 0;
+        font-weight: 200;
+        color: $color-dark;
+        transform: translateY(0);
+      }
+    }
+    .tant{
+      position:absolute;
+      color: $color-bright;
+      font-weight: 200;
+      font-size: clamp(79px, 10.2vw, 197px);
+      font-family: "Orbikular", serif;
+      text-align: center;
+      width: 100%;
+      padding: 0 8vw;
+      @include res{
+        font-size: 40px;
+        position: static;
+        color: $color-dark;
+        padding: 0;
+        font-weight: 300;
+        width: auto;
+      }
+      strong{
+        display: inline-flex;
+      }
+      --line:0;
+      &::after{
+        content: '';
+        display: block;
+          width: var(--line);
+          background: $color-bright;
+          height: 3px;
+          transition: width .5s;
+          @include res{
+            background: $color-dark;
+            width: 100%;
+            height: 1px;
+          }
+      }
+
+    }
+  }
+  .clip{
+    --width:650px;
+    --height:570px;
+    width: var(--width);
+    height: var(--height);
+    overflow: hidden;
+    border-radius: 20px;
+    @include res{
+      width: 100%;
+      aspect-ratio: 4/3;
+    }
+    canvas{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.sc-type{
+  padding-top: 240px;
+  @include res{
+    padding-top: 0;
+  }
+  .type-area{
+    padding: 0 0 240px 10vw;
+    display: flex;
+    flex-wrap: wrap;
+    @include res{
+      flex-direction: column;
+      border-top: 1px solid rgba(0,61,49,.3);
+      padding: 20vw 20px;
+    }
+    h3{
+      margin: 80px 1.4vw 0 0;
+      width: 23vw;
+      text-transform: uppercase;
+      font-size: clamp(13px, 1.11vw, 21px);
+      font-weight: 400;
+      @include res{
+        width: 100%;
+        font-size: 17px;
+        margin: 0;
+      }
+    }
+    p{
+      width: 56vw;
+      font-size: clamp(59px, 7.6vw, 146px);
+      line-height: 1.14;
+      font-family:"Orbikular", serif;
+      font-weight: 200;
+      @include res{
+        width: 100%;
+        font-size: 31px;
+        font-weight: 300;
+        margin-top: 50px;
+      }
+    }
+  }
+}
+
+.sc-company{
+  background: $color-black;
+  .sticky-container{
+    height: 700vh;
+    @include res {
+      height: auto;
+    }
+  }
+  .sticky{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; 
+    white-space: nowrap;
+    @include res{
+      display: block;
+      padding: 0;
+      width: 100%;
+      height: auto;
+    }
+  }
+  
+  .card-list {
+    display: flex;
+    width: max-content;
+    gap: 5vw;
+    justify-content: flex-start; 
+    padding: 0 130vw 0 100vw;
+    @include res{
+      justify-content: center;
+      padding: 24vw 0 30vw;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+}
+.card-item {
+    width: clamp(330px, 40vw, 460px);
+    height: clamp(460px,36vw, 654px);
+    background: $color-primary;
+    padding: 38px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    white-space: wrap;
+    @include res{
+      width: 280px;
+      height: auto;
+      padding: 30px;
+      min-width: auto;
+      min-height: auto;
+      transform: translateX(-40px) rotate(9deg);
+      &:nth-child(2n){
+        transform: translateX(40px) rotate(-9deg);
+
+      }
+    }
+    &.yellow, &.blue{
+      .name,.company,.desc{
+        color: $color-black;
+      }
+    }
+    &.yellow{
+      background: $color-bright;
+    }
+    &.blue{
+      background:$color-free;
+    }
+    .name{
+      font-size: clamp(29px, 3.75vw, 72px);
+      line-height: 1.075;
+      margin-bottom: 30px;
+      color: $color-white;
+      @include res{
+        font-size: 43px;
+        margin-bottom: 20px;
+      }
+    }
+    .company{
+      text-transform: uppercase;
+      font-size: clamp(13px, 1.11vw, 21px);
+      color: $color-bright;
+      @include res{
+        font-size: 14px;
+      }
+    }
+    .desc{
+      font-size: clamp(13px, 1vw, 19px);
+      line-height: 1.57;
+      color: $color-white;
+      @include res{
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+.sc-fait{
+  background: $color-black;
+  .pour{
+    font-weight: 200;
+    font-size: clamp(40px, 4.9vw, 93px);
+    line-height: 1.03;
+    font-family: "Orbikular",serif;
+    color: $color-white;
+    text-align: center;
+    @include res{
+      font-size: 32px;
+    }
+  }
+  .tab-area{
+    padding: 156px 0 220px;
+    display: flex;
+    width:80vw;
+    margin: 0 auto;
+    justify-content: space-between;
+    @include res{
+      flex-direction: column;
+      padding: 20vw 5vw; 
+      width: 100%;
+    }
+    .tab-list{
+      width:31vw;
+      @include res{
+        width: 100%;
+      }
+    }
+    .tab-item{
+      &:hover,&.active{
+        button{
+          background:$color-bright;
+          color:$color-black;
+        }
+      }
+      button{
+        width: 100%;
+        height: 120px;
+        border-radius: 60px;
+        border: 1px solid rgba(247, 247, 247, .2);
+        color: $color-white;
+        text-align: left;
+        padding: 0 50px;
+        background: $color-black;
+        font-size: clamp(12px, 1.2vw, 24px);
+        line-height: 1.5;
+        font-weight: 400;
+        transition: background .3s, color .3s;
+				transform-origin: 0 90%;
+        @include res{
+          font-size: 14px;
+          padding: 0 40px;
+          height: 90px;
+        }
+      }
+    }
+    .tab-item + .tab-item{
+      margin-top:26px;
+    }
+    .panel-wrap{
+      width:39vw;
+      margin: 44px 0 0;
+      color:$color-white;
+      line-height:1.6875;
+      font-size: clamp(12px, 1.2vw, 24px);
+      font-weight : 400;
+      position: relative;
+      @include res{
+        font-size: 16px;
+        width: 100%;
+        height: max-content;
+      }
+      .tab-panel{
+        &::before{
+          content: "";
+          width: 14px;
+          height: 14px;
+          border-radius: 100%;
+          background: $color-bright;
+          position: absolute;
+          top: 7px;
+          left: -30px;
+          @include res{
+            content: none;
+          }
+        }
+        &.on{
+          opacity: 1;
+          visibility: visible;
+          transform: translateY(0);
+          
+        }
+        &:not(.on){
+          @include res{
+            display: none;
+          }
+        }
+        position: absolute;
+        top: 0;
+        @include res{
+          position: relative;
+        }
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-20px);
+        transition: opacity .5s , visibility .5s, transform .3s;
+      }
+      p{
+        line-height:1.2;
+        @include res{
+          line-height: 1.5;
+        }
+      }
+      ol{
+        margin-top: 1.4vw;
+      }
+      ol,li{
+        list-style-type: decimal;
+      }
+    }
+  }
+}

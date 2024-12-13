@@ -1,0 +1,55 @@
+@font-face {
+  font-family: "Roobert";
+  src: url("./t/Roobert-RegularItalic.woff2") format("woff2"), url("./t/Roobert-RegularItalic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap
+}
+
+@font-face {
+  font-family: "Roobert";
+  src: url("../fonts/Roobert-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap
+}
+
+@font-face {
+  font-family: "Roobert";
+  src: url("../fonts/Roobert-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap
+}
+
+@font-face {
+  font-family: "Orbikular";
+  src: url("../fonts/Orbikular-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap
+}
+
+@font-face {
+  font-family: "Orbikular";
+  src: url("../fonts/Orbikular-LightItalic.woff2") format("woff2");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap
+}
+
+@font-face {
+  font-family: "Orbikular";
+  src: url("../fonts/Orbikular-ExtraLight.woff2") format("woff2");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap
+}
+
+@font-face {
+  font-family: "Orbikular";
+  src: url("../fonts/Orbikular-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap
+}
